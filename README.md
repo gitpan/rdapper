@@ -31,14 +31,18 @@ To install this program type the following commands in the source directory:
 
 - \--TYPE=TYPE
 
-    Specify the type of object being queried. Possible values are: domain, 
-    entity, nameserver, autnum, ip. Rdapper will automatically detect IPv4 
-    and IPv6 addresses and AS numbers, and will fall back to domain queries 
+    Specify the type of object being queried. Possible values are: `domain`, 
+    `entity`, `nameserver`, `autnum` and `ip`. rdapper will detect IPv4 and IPv6
+    addresses and CIDR networks and AS numbers, and will fall back to domain queries
     for everything else.
 
 - \--tls
 
     Force use of TLS.
+
+- \--insecure
+
+    Disable server certificate checking and hostname verification.
 
 - \--username=USERNAME
 
@@ -48,13 +52,17 @@ To install this program type the following commands in the source directory:
 
     Specify a password to be used with Basic Authentication.
 
+    Note: if the initial request is redirected, authentication credentials will be
+    sent in the subsequent request to the target server, so users should consider
+    whether these credentials might be disclosed inappropriately.
+
 - \--cert=CERTIFICATE
 
     Specify a client SSL certificate to present to the server.
 
 - \--key=KEY
 
-    Specify a private key matching the certificate given in `--password`.
+    Specify a private key matching the certificate given in `--cert`.
 
 - \--keypass=PASSPHRASE
 
@@ -83,9 +91,9 @@ To install this program type the following commands in the source directory:
 
 # USE OF RDAP.ORG
 
-Unless instructed otherwise (via the --host argument), rdapper will send 
-all queries to rdap.org: this server is an aggregator of RDAP services, 
-and will provide an HTTP redirect where available.
+Unless instructed otherwise (via the `--host` argument), rdapper will send 
+all queries to rdap.org: this server is an aggregator of RDAP services, and will
+provide an HTTP redirect to the appropriate service where available.
 
 # SEE ALSO
 
@@ -95,6 +103,6 @@ and will provide an HTTP redirect where available.
 
 # COPYRIGHT
 
-rdapper is Copyright 2012 CentralNic Ltd. All rights reserved. This program is
+rdapper is Copyright 2013 CentralNic Ltd. All rights reserved. This program is
 free software; you can redistribute it and/or modify it under the same terms as
 Perl itself.
