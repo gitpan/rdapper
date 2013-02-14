@@ -1,0 +1,52 @@
+{
+   "abstract" : "a command-line RDAP client.",
+   "author" : [
+      "Gavin Brown <gavin.brown@uk.com>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.120921",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "rdapper",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "inc"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Getopt::Long" : "0",
+            "HTTP::Request::Common" : "0",
+            "IO::Socket::SSL" : "0",
+            "JSON" : "0",
+            "JSON::Path" : "0",
+            "LWP" : "6",
+            "MIME::Base64" : "0",
+            "MIME::Type" : "0",
+            "Mozilla::CA" : "0",
+            "POSIX" : "0",
+            "Pod::Usage" : "0",
+            "URI" : "0"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "version" : "0.08"
+}
